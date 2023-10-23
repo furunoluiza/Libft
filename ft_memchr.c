@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 void *ft_memchr(const void *s, int c, size_t n)
 {
 	while (n > 0)
@@ -21,16 +21,4 @@ void *ft_memchr(const void *s, int c, size_t n)
 		n--;
 	}
 	return (NULL);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	char	c;
-	int	n;
-	char *ptr = "luiza";
-	c = 'i';
-	n = 4;
-	char *ret = ft_memchr(ptr, c, n);
-	printf("%s", ret);	
 }

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stddef.h>
+#include "libft.h"
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {	
 	unsigned char	*dest_ptr;
@@ -27,14 +26,4 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 		n--;
 	}
 	return ((unsigned char*)(dest));
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	char	*a;
-	char ptr[] = "luiza";
-	char ptr_1[] = "fluminense";
-	a = ft_memcpy(ptr, ptr_1, 6);
-	printf("%s", a);
 }

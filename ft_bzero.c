@@ -22,15 +22,3 @@ void ft_bzero(void *s, size_t n)
 		n--;
 	}
 }
-
-#include <stdio.h>
-int	main(void)
-{
-	int	n;
-	char	*a;
-
-	n = 4;
-	char s[7] = "seilaa";
-	ft_bzero(s, n);
-	printf("%s", s);
-}

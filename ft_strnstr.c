@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
@@ -35,17 +35,4 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		j = 0;
 	}
 	return (NULL);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	int	n;
-	char 	*c;
-	n = 22;
-	char *big = "F_BD_CE_BD_EF_BF_BF_EF_BF_BD_EF__DD_EF_BF_BD";
-	char *little = "_EF_BF_BE_E";
-	c = ft_strnstr(big, little, n);
-	printf("%s", (c));
-	return (0);
 }

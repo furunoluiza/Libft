@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	while (n > 0)
@@ -22,14 +22,4 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 		n--;
 	}
 	return (0);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	int	n;
-	char *ptr = "luiza";
-	char *pt = "luan";
-	n = 3;
-	printf("%d", ft_memcmp(ptr, pt, n));
 }

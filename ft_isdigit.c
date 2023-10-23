@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
@@ -17,11 +18,3 @@ int	ft_isdigit(int c)
 	else
 		return (0);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	int	a;
-	a = '0';
-	printf("%d", ft_isdigit(a));
-	return (0);
-}*/

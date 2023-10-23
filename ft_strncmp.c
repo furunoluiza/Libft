@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+#include "libft.h"
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while ((*s1 || *s2) && n > 0)
 	{
@@ -22,16 +22,4 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 		n--;
 	}
 	return (0);
-}
-
-#include <stdio.h>
-int   main(void)
-{
-        unsigned int    n;
-        int     c;
-        char s1[] = "lliza";
-        char s2[] = "luiza";
-        n = 2;
-        c = ft_strncmp(s1, s2, n);
-        printf("%d", c);
 }

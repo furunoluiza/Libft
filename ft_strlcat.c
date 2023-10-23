@@ -41,16 +41,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (j);
 	return (src_length - j);
 }
-
-#include <string.h>
-#include <stdio.h>
-int	main(void)
-{
-	char s[] = "legal";
-	char d[] = "ok";
-	int n;
-
-	n = 8;
-	strlcat(d, s, n);
-	printf("%s", d);
-}
