@@ -6,17 +6,18 @@
 /*   By: lfuruno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:16:30 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/10/17 13:43:46 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:56:59 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 size_t	ft_strlen(char *s)
 {
-	size_t len;
-	
+	size_t	len;
+
 	len = 0;
-	while(*s++)
+	while (*s++)
 		len++;
 	return (len);
 }

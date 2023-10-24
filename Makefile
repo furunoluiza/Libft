@@ -1,6 +1,6 @@
 NAME = libft.a
-CC: gcc
-FLAGS = -Wall -Wextra - Werror
+CC = gcc
+FLAGS = -Wall -Wextra -Werror
 FILES = ft_atoi.c ft_isalpha.c ft_memchr.c ft_memset.c ft_strlen.c \
 	ft_tolower.c ft_bzero.c ft_isascii.c ft_memcmp.c ft_strchr.c \
 	ft_strncmp.c ft_toupper.c ft_calloc.c ft_isdigit.c ft_memcpy.c \
@@ -9,7 +9,7 @@ FILES = ft_atoi.c ft_isalpha.c ft_memchr.c ft_memset.c ft_strlen.c \
 OBJECTS = $(FILES:.c=.o) 
 RM = rm -f
 
-all: $(NAME)
+all: $(NAME) clean
 
 $(NAME): $(OBJECTS)
 	ar -rcs $(NAME) $(OBJECTS)
