@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfuruno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 14:03:03 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/10/26 14:56:15 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/10/27 14:58:30 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/10/27 16:42:45 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	size_t	total;
+	int		j;
+	char	*p;
+	char	*pos;
 
-	if (size == 0)
-		return (ft_strlen(src));
-	i = ft_strlen (dst);
-	j = ft_strlen(src);
-	total = i + j;
-	if (size <= i)
-		return (size + j);
-	j = 0;
-	while (src[j] != '\0' && i < size - 1)
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	j = ft_strlen(s1);
+	while (*s1 && (ft_strchr(set, s1[j])))
+		j--;
+	j++;
+	p = (char *) malloc((j + 2) * sizeof(char));
+	if (!p)
+		return (NULL);
+	pos = p;
+	while (j--)
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		*p++ = *s1++;
 	}
-	dst[i] = '\0';
-	return (total);
+	*p = '\0';
+	return (pos);
 }

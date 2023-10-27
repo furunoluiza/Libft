@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfuruno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 14:03:03 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/10/26 14:56:15 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/10/26 18:44:09 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/10/26 18:51:42 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	size_t	j;
-	size_t	total;
+	int	i;
 
-	if (size == 0)
-		return (ft_strlen(src));
-	i = ft_strlen (dst);
-	j = ft_strlen(src);
-	total = i + j;
-	if (size <= i)
-		return (size + j);
-	j = 0;
-	while (src[j] != '\0' && i < size - 1)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		dst[i] = src[j];
+		write(fd, &s[i], 1);
 		i++;
-		j++;
 	}
-	dst[i] = '\0';
-	return (total);
+	write(fd, "\n", 1);
 }
