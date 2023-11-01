@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfuruno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 14:51:15 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/10/24 13:57:17 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:49:58 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
-// malloc(sizeof(char) * size + 1);
-// calloc (sizeof(char), size + 1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfuruno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:36:03 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/10/25 15:31:15 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:02:46 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	j = 0;
-	if (little[j] == '\0')
+	if ((!big || !little) && !len)
+		return (NULL);
+	if (little[i] == '\0')
 		return ((char *) big);
-	while (big[i] != '\0' && len > 0)
+	while (big[i] != '\0')
 	{
-		while (big[i] == little[j] && len > 0)
+		j = 0;
+		while ((big[i + j] == little[j]) && (i + j < len))
 		{
-			i++;
+			if (big[i + j] == '\0' && little[j] == '\0')
+				return ((char *)&big[i]);
 			j++;
-			len--;
 		}
 		if (little[j] == '\0')
-			return ((char *) &big[i - j]);
+			return ((char *)big + i);
 		i++;
-		len--;
-		j = 0;
 	}
-	return (NULL);
+	return (0);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfuruno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:48:20 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/10/30 15:36:14 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:53:19 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_contmem(long n)
+static int	ft_contmem(long n)
 {
 	int	i;
 
