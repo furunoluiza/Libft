@@ -6,7 +6,7 @@
 /*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:36:03 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/01 18:02:46 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:13:14 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			j++;
 		}
 		if (little[j] == '\0')
-			return ((char *)big + i);
+			return ((char *)&big[i]);
 		i++;
 	}
 	return (0);

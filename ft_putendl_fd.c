@@ -6,7 +6,7 @@
 /*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 18:44:09 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/01 16:03:19 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:43:46 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ((void) 0);
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);

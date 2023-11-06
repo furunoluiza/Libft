@@ -6,7 +6,7 @@
 /*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 13:48:53 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/01 16:12:47 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:35:10 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	size;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	size = ft_strlen(s);
 	p = (char *) malloc ((size + 1) * sizeof(char));
 	if (!p)

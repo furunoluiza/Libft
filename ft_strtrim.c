@@ -6,7 +6,7 @@
 /*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:58:30 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/01 19:54:18 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:30:52 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*p;
 	char	*pos;
 
+	if (!s1 || !set)
+		return (NULL);
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	j = ft_strlen(s1);

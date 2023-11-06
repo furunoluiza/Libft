@@ -6,7 +6,7 @@
 /*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 18:37:22 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/01 16:05:10 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:42:39 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ((void) 0);
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);
