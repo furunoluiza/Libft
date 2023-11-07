@@ -6,7 +6,7 @@
 /*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:17:51 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/06 14:30:17 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:36:40 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start >= len)
 		return (ft_strdup(""));
+	if (len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
 	p = (char *)malloc ((len + 1) * sizeof (char));
 	if (!p)
 		return (NULL);
