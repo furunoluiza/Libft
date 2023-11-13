@@ -3,37 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfuruno- <luizafuruno@gmail.com>           +#+  +:+       +#+        */
+/*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 14:58:30 by lfuruno-          #+#    #+#             */
-/*   Updated: 2023/11/06 13:30:52 by lfuruno-         ###   ########.fr       */
+/*   Created: 2023/11/10 14:30:22 by lfuruno-          #+#    #+#             */
+/*   Updated: 2023/11/11 12:23:00 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	find(const char c, const char *set)
+{
+	while (*set)
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		j;
+	size_t	len;
 	char	*p;
-	char	*pos;
 
 	if (!s1 || !set)
 		return (NULL);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	j = ft_strlen(s1);
-	while (*s1 && (ft_strchr(set, s1[j])))
-		j--;
-	j++;
-	p = (char *) malloc((j + 1) * sizeof(char));
+	while (*s1)
+	{
+		if (find(*s1, set) == 1)
+			s1++;
+		else
+			break ;
+	}
+	len = ft_strlen(s1);
+	while (len != 0)
+	{
+		if (find(s1[len - 1], set) == 1)
+			len--;
+		else
+			break ;
+	}
+	p = (char *) malloc((len + 1) * sizeof(char));
 	if (!p)
 		return (NULL);
-	pos = p;
-	while (j--)
-	{
-		*p++ = *s1++;
-	}
-	*p = '\0';
-	return (pos);
+	ft_strlcpy(p, s1, (len + 1));
+	return (p);
 }
